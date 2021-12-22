@@ -29,7 +29,21 @@ def puzzle1(ds):
 
 def puzzle2(ds):
     running_total = 0
-    
+    instructions = ds[ds.index('')+1:]
+    dots = [list(map(int, item)) for item in [coordinates.split(',') for coordinates in ds[:ds.index('')]]]
+
+    for fold in instructions:
+        a, line = fold.split('=',2)
+        axis = 0 if a.split()[2] == 'x' else 1
+        
+        for i in range(len(dots)):
+            if dots[i][axis] > int(line):
+                dots[i][axis] = int(line) - (dots[i][axis] - int(line))
+
+    unique_dots = set(tuple(i) for i in dots)
+    print(unique_dots)
+    running_total = len(unique_dots)
+
     return running_total
 
 
