@@ -34,7 +34,7 @@ def puzzle1(chart, route=[START]):
 def small_cave_revisited(route):
     # Create a dictionary of elements & their frequency count
     caves = dict(Counter(route))
-    caves = { key:value for key, value in caves.items() if value > 1}  # and key.islower()
+    caves = { key:value for key, value in caves.items() if value > 1}
     
     for key in caves.keys():
         if key.islower():
