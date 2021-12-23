@@ -1,0 +1,3 @@
+# 1852191-20211206-4e78ee6f
+# from aocd.models import Puzzle
+# puzzle = Puzzle(year=2021, day=1)

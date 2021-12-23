@@ -1,11 +1,33 @@
-from collections import defaultdict, Counter
-
 DATA = 'datasets/13.txt'
 
 
 def get_dataset(dt):
     f = open(dt, "r")
     return [x.strip() for x in f]
+
+
+def empty_board(mx,my):
+    line = '.' * mx
+    board = []
+    for i in range(my):
+        board.append([x for x in line])
+
+    return board
+
+
+def build_board(ds):
+    max_x = 40
+    max_y = 6
+    board = empty_board(max_x, max_y)
+    for x,y in ds:
+        board[y][x] = '#'
+
+    return board
+    
+
+def draw_board(b):
+    for y in b:
+        print(y)
 
 
 def puzzle1(ds):
@@ -41,7 +63,7 @@ def puzzle2(ds):
                 dots[i][axis] = int(line) - (dots[i][axis] - int(line))
 
     unique_dots = set(tuple(i) for i in dots)
-    print(unique_dots)
+    draw_board(build_board(unique_dots))
     running_total = len(unique_dots)
 
     return running_total
