@@ -1,6 +1,6 @@
 # Private Advent of Code Git repository
  
-Hello, my name is Gonzalo, and I'm taking on the Advent of Code challenge this year.
+I'm taking on the Advent of Code challenge this year (2021).
  
 In this repository I'm saving my solutions for all the different daily challenges, starting in 2021 and going backwards in time.
 
